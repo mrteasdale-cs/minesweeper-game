@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=GameColours
+comment0.text=\r\n\ \ *\ This\ utility\ class\ handles\ all\ the\ colours\ in\ the\ game\ to\ allow\ easy\ changing\ of\ game\ cells,\ display\ panels\r\n\ \ *\ and\ borders.\ Could\ be\ extended\ to\ add\ other\ game\ colours\ such\ as\ adding\ themes\ etc.\r\n\ @author\ M\ Teasdale\r\n\ @version\ 25/6/24\r\n
+comment1.params=
+comment1.target=void\ setDarkColourScheme()
+numComments=2

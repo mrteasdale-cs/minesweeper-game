@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=MinesweeperGUIControl
+comment0.text=\r\n\ This\ is\ the\ class\ for\ the\ GUI\ controls\ (buttons\ and\ adding\ labels\ from\ MinesweeperGUILabels\ Class)\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.2\ Minesweeper\ GUI\ Edition\r\n
+comment1.params=mainGUI\ guiLabels
+comment1.target=MinesweeperGUIControl(MinesweeperGUI,\ MinesweeperGUILabels)
+comment1.text=\r\n\ This\ contructor\ takes\ in\ several\ paramters\ includuing\ an\ instance\ of\ the\ mainGUi\ as\ well\ as\ the\ labels\ that\ will\r\n\ show\ on\ the\ control\ panel\r\n\ @param\ mainGUI\ the\ mainGUI\ runner\ class\ 'MinesweeperGUI'\r\n\ @param\ guiLabels\ the\ MinesweeperGUILabels\ class\r\n
+comment2.params=
+comment2.target=javax.swing.JMenuBar\ getCreateMenu()
+comment2.text=\r\n\ Method\ to\ create\ a\ menu\ (work\ in\ progress)\ 26-6-24\r\n\ @return\ JMenuBar\ item\ with\ 3\ menu\ items\r\n
+comment3.params=
+comment3.target=void\ createDisplayPanel()
+comment3.text=\r\n\ Method\ to\ create\ the\ main\ display\ panel\ at\ the\ top\ of\ the\ game\ window\ with\ all\ labels\r\n
+comment4.params=
+comment4.target=void\ createControlPanel()
+comment4.text=\r\n\ This\ method\ sets\ up\ the\ control\ panel\ at\ the\ top\ of\ the\ screen\r\n
+comment5.params=
+comment5.target=javax.swing.JPanel\ getDisplayPanel()
+comment6.params=
+comment6.target=javax.swing.JPanel\ getControlPanel()
+comment7.params=e
+comment7.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment7.text=\ \r\n\ This\ method\ is\ used\ to\ perform\ the\ game\ controls\ by\ calling\ each\ method\ based\ on\ which\ button\ is\ clicked\r\n
+numComments=8

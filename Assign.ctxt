@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Assign
+comment0.text=\r\n\ Assign\r\n\ This\ class\ handles\ the\ creation\ of\ all\ moves\ in\ the\ game\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.2\ 29-5-24\ (latest\ GUI\ Edition\ update)\r\n
+comment1.params=game\ row\ col\ guess
+comment1.target=Assign(Minesweeper,\ int,\ int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ Assign\ class.\r\n\ This\ gets\ the\ total\ number\ of\ moves\ and\ calls\ methods\ to\ determine\ the\ row\ that\ will\ be\ filled,\ and\ to\ set\ the\ state\ of\ the\ slot\ being\ assigned.\r\n\ @param\ game\ -\ the\ game\r\n\ @param\ col\ -\ the\ column\ the\ user\ has\ selected\r\n\ @param\ guess\ -\ a\ String\ value\ that\ allows\ the\ guess\ to\ be\ placed\ on\ the\ board\r\n
+comment2.params=guess
+comment2.target=void\ assignMove(java.lang.String)
+comment2.text=\r\n\ assignMove\r\n\ This\ method\ assigns\ the\ move\ to\ the\ game\r\n\ @param\ String\ guess\ to\ set\ the\ item\ onto\ the\ board\r\n
+comment3.params=
+comment3.target=int\ getRow()
+comment3.text=\r\n\ getRow\r\n\ This\ method\ returns\ the\ current\ row\ value\ for\ this\ move.\ It\ allows\ another\ element\ of\ the\ program\ to\ access\ this\ move's\ current\ row.\r\n\ @return\ the\ row\ value\ as\ an\ integer\r\n
+comment4.params=
+comment4.target=int\ getCol()
+comment4.text=\r\n\ getCol\r\n\ This\ method\ returns\ the\ current\ col\ value\ for\ this\ move.\ It\ allows\ another\ element\ of\ the\ program\ to\ access\ this\ move's\ current\ row.\r\n\ @return\ the\ column\ value\ as\ an\ integer\r\n
+comment5.params=row\ col
+comment5.target=java.lang.String\ getMove(int,\ int)
+comment5.text=\r\n\ getMove\r\n\ @return\ Returns\ the\ current\ state\ of\ a\ cell\ as\ a\ String\r\n
+comment6.params=
+comment6.target=Slot[][]\ getMoves()
+comment6.text=\r\n\ This\ method\ gets\ the\ moves\ from\ the\ board\ asa\ 2d\ array\r\n\ @return\ a\ 2d\ array\ of\ Slot\ type\r\n
+numComments=7
