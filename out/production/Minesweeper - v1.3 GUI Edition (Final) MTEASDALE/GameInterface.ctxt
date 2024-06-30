@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=GameInterface
+comment0.text=\r\n\ This\ interface\ implements\ all\ the\ methods\ used\ across\ both\ the\ Text\ UI\ and\ GUI\ game\ interface\r\n
+comment1.params=
+comment1.target=void\ clearGame()
+comment2.params=fileName
+comment2.target=void\ saveGame(java.lang.String)
+comment3.params=fileName
+comment3.target=void\ loadGame(java.lang.String)
+comment4.params=
+comment4.target=int\ getDifficulty()
+comment5.params=
+comment5.target=void\ undoMove()
+comment6.params=row\ col
+comment6.target=void\ saveMoves(int,\ int)
+comment7.params=
+comment7.target=java.lang.String\ getSaveGame()
+comment8.params=
+comment8.target=void\ winningAnnouncement()
+comment9.params=
+comment9.target=void\ livesAnnouncement()
+numComments=10
