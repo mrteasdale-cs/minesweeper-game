@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=SlotObserver
-comment0.text=\r\n\ This\ is\ the\ SlotObserver\ class\ to\ implement\ observer\ from\ the\ Slot\ class\ to\ change\ button\ state\ in\ MinesweeperGUIBoard\ class\r\n\ \ *\ @author\ Myran\ Teasdale\r\n\ \ *\ @version\ v1.3\ Minesweeper\ GUI\ Edition\r\n
-comment1.params=mainGame\ guiGameBoard\ livesLabel\ gameButton\ slot
-comment1.target=SlotObserver(Minesweeper,\ MinesweeperGUIBoard,\ javax.swing.JLabel,\ javax.swing.JButton,\ Slot)
-comment2.params=observable\ obj
-comment2.target=void\ update(java.util.Observable,\ java.lang.Object)
-comment2.text=\r\n\ Method\ that\ updates\ the\ button\ state.\ Gets\ the\ current\ slot\ state\ and\ button\ then\ sets\ ?\ to\ M\ or\ 1,2,3\ etc\r\n\ @param\ observable\ \ \ \ \ the\ observable\ object\ (a\ button)\r\n\ @param\ obj\ \ \ an\ argument\ passed\ to\ the\ {@code\ notifyObservers}\ can\ be\ found\ in\ Slot\ class\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ method.\r\n
-numComments=3
