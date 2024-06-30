@@ -12,7 +12,6 @@ public interface GameInterface {
     int getDifficulty();
     void undoMove();
     void saveMoves(int row, int col);
-    String getSaveGame();
     void winningAnnouncement();
     void livesAnnouncement();
 

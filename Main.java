@@ -15,7 +15,6 @@ public class Main {
         //Testing
         //MinesweeperGUI newGUI = new MinesweeperGUI(530, 480);
         //MinesweeperUI newUI = new MinesweeperUI();
-
         // Ask the user which type of game they would prefer.
         String[] choices = {"GUI", "TUI"}; //setup button choices
         int choice = JOptionPane.showOptionDialog(null, "GUI or Text-Based (TUI) game?",
@@ -25,6 +24,5 @@ public class Main {
         } else {
             MinesweeperUI newUI = new MinesweeperUI();
         }
-
     } // end main method
 } // end main class

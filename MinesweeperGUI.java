@@ -312,18 +312,19 @@ public class MinesweeperGUI implements GameInterface {
      * This is the clearGame method. It will display to the user a popup box and if they choose yes it will iterate the main game grid
      * and set all slots to ? as well as reset the button appearances to default. The method will also return lives back to 3 and reset
      * any colour changes that have been made during the game such as the lives number.
+     * BUG FIX: 30-6-24 - cell states not saving/loading correctly as clearGame method incorrectly setting the cellstate ("?").
      */
     @Override
     public void clearGame() {
         String gameStatus = mainGame.checkWin();
-
+        String[][] gameBoard = mainGame.readLevelFile();
             for (int row = 0; row < mainGame.getGameSize(); row++) {
                 for (int col = 0; col < mainGame.getGameSize(); col++) {
                     Slot slot = new Slot(row, col, "?");
                     slot.setState("?");
                     // create new assign object to get the current move and ensure buttons are reset properly to default
                     Assign assign = new Assign(mainGame, row, col,"");
-                    mainGame.setCellState(row, col, assign.getMove(row, col));
+                    mainGame.setCellState(row, col, "?");
                     setGameButtonDefault(row, col); // Method to clear button back to default state
                 }
             }
@@ -352,7 +353,8 @@ public class MinesweeperGUI implements GameInterface {
 
     /**
      * saveGame
-     * This method saves the current state of the game, along with the corresponding moves already made
+     * This method saves the current state of the game, along with the corresponding moves already made.
+     * UPDATE: Added a get lives function to return the users lives to where they left off
      * @param fileName accepts a string for the name of the file to save as
      */
     @Override
@@ -361,17 +363,17 @@ public class MinesweeperGUI implements GameInterface {
             try {
                 // Create new printstream object to write to files
                 PrintStream print = new PrintStream(fileName);
-
                 print.println(mainGame.getGameSize()); // add the gamesize to the savefile
+                print.println(mainGame.getLives()); // add the lives left to the savefile
 
                 for (int row = 0; row < mainGame.getGameSize(); row++) {
                     for (int col = 0; col < mainGame.getGameSize(); col++) {
                         // Create the save game using the current state of cells - this will generate a string with
                         // row, col and the cell state and write to the file
                         print.println(row + " " + col + " " + mainGame.getCellState(row, col));
+                        //System.out.println(mainGame.getCellState(row, col)); //testing
                     }
                 }
-
                 print.close(); // close the printstream
                 JOptionPane.showConfirmDialog(frame, "Saved successfully\n" + fileName, "Saving", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE);
 
@@ -383,8 +385,10 @@ public class MinesweeperGUI implements GameInterface {
     }
 
     /**
-     * saveGame
-     * This method gets an already saved game form file and inserts it into the game so the player can start where they previosuly left off
+     * loadGame
+     * This method gets an already saved game form file and inserts it into the game so the player can start where they previosuly left off.
+     * BUG FIX: 30-6-24: Load game not allowing a win/lose - ensures cell state correctly set using a new slot object
+     * UPDATE: Added a get lives function to return the users lives to where they left off
      * @param fileName accepts a string for the name of the file to load
      */
     @Override
@@ -394,27 +398,33 @@ public class MinesweeperGUI implements GameInterface {
                 clearGame(); //clear the game first which sets everything back to default
                 Scanner reader = new Scanner(new File(fileName));
                 int gameSize = Integer.parseInt(reader.next());
-
+                int remainingLives = Integer.parseInt(reader.next()); // gets the remaining lives from a game file
                 // a nested loop to iterate through the game grid and set each button to the state from the savefile.
                 // if the state is '?' it will not do anything.
                 for (int i = 0; i < gameSize; i++) {
                     for (int j = 0; j < gameSize; j++) {
                         int row = Integer.parseInt(reader.next());
                         int col = Integer.parseInt(reader.next());
-                        String status = reader.next();
-                        new Slot(row, col, status);
+                        String state = reader.next();
+                        // create new assign object to get the current move and ensure buttons are reset properly to default
+
                         JButton currButton = guiGameBoard.getButton(row, col);
                         // Only set the buttons to the status and disabled if they are not ? meaning they
                         // were previously uncovered
-                        if (!status.equals("?")) {
-                            currButton.setText(status);
-                            Color currColour = GameColours.getCellColour(status);
+                        if (!state.equals("?")) {
+                            Slot slot = new Slot(row, col, state);
+                            mainGame.setCellState(row, col, slot.getState());
+                            if (!state.equals("M")) { //if not a mine, then set text to state (as mine cells are images)
+                                currButton.setText(state);
+                            } else {
+                                mainGame.setLives(remainingLives);
+                            }
+                            Color currColour = GameColours.getCellColour(state);
                             currButton.setBackground(currColour);
-                            currButton.setEnabled(false);
-                            //currButton.getBut
+                            currButton.setEnabled(false); //disable button so player cannot click
                         }
                     }
-                }
+                }//end loop
 
                 // confirm dialog to tell the use if the load was successful
                 JOptionPane.showConfirmDialog(
@@ -429,7 +439,7 @@ public class MinesweeperGUI implements GameInterface {
                         "Error Loading File. Try again." + "\n\nMore Information:\n" + e, "Error",
                         JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
             }
-        }
+        } // end if block
     } // end saveGame method
 
     /**
@@ -446,7 +456,6 @@ public class MinesweeperGUI implements GameInterface {
         if (choice == 0) {
             return 0;
         } else {return 1;}
-
     } // end getDifficulty method
 
     /**
@@ -469,6 +478,5 @@ public class MinesweeperGUI implements GameInterface {
     public String getSaveGame() {
         return "Levels/GUI/SAVEGAME.txt";
     }
-
 
 } // end MinesweeperGUI class

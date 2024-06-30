@@ -21,8 +21,8 @@ public class MinesweeperUI implements GameInterface {
      * Constructor for the class UI
      */
     public MinesweeperUI() {
-        thegame = new Minesweeper(0);
         reader = new Scanner(System.in);
+        thegame = new Minesweeper(getDifficulty());
         menuChoice="";
         moveHistory = new Stack<>(); // create a new stack for move history
 
@@ -164,8 +164,10 @@ public class MinesweeperUI implements GameInterface {
             saveMoves(row, col);
 
         } else if (choice.equalsIgnoreCase("S")) {
-            String saveName = getSaveGame();
-            try { saveGame(saveName); }
+            String saveName = getFolderLocation();
+            System.out.print("Enter filename (without extension/.txt): ");
+            String fileName = reader.next();
+            try { saveGame(fileName); }
             catch (IOException e) {
                 e.printStackTrace();
             }
@@ -173,13 +175,13 @@ public class MinesweeperUI implements GameInterface {
             undoMove();
         } else if (choice.equalsIgnoreCase("L")) {
             //String fileName = "SAVEGAME.txt";
-            System.out.print("Enter filename: ");
+            System.out.print("Enter filename (test with SAVEGAME1.txt): ");
             String fileName = reader.next();
             String fileType = fileName.substring(fileName.lastIndexOf(".")); //get filetype using substring method
             // check if filetype is txt, then try to load file using try catch block
             if (fileType.equalsIgnoreCase(".txt")) {
                 try {
-                    loadGame("Levels/" + fileName);
+                    loadGame(fileName);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace(); //error handling
                 }
@@ -207,10 +209,12 @@ public class MinesweeperUI implements GameInterface {
     @Override // Overidden method to allow for UI and GUI implementation via an interface
     public void saveGame(String fileName) throws IOException {
         try {
-            System.out.println("Saving to..." + fileName);
+            String fullPath = getFolderLocation() + fileName + ".txt";
+            System.out.println("Saving to..." + fullPath);
             // Create new printstream object to write to files
-            PrintStream print = new PrintStream(new File(fileName));
+            PrintStream print = new PrintStream(new File(fullPath));
             print.println(Integer.toString(thegame.getGameSize())); // add the gamesize to the savefile
+            print.println(Integer.toString(thegame.getLives())); // add the lives to the savefile
 
             for (int row = 0; row < thegame.getGameSize(); row++) {
                 for (int col = 0; col < thegame.getGameSize(); col++) {
@@ -220,7 +224,6 @@ public class MinesweeperUI implements GameInterface {
                 }
             }
             print.close();
-
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error saving game.");
@@ -264,16 +267,17 @@ public class MinesweeperUI implements GameInterface {
     /**
      * loadGame
      * This method loads a previous saved game by using the scanner class to read from a file and using the readLevelFile
-     * method
+     * method. Improvements for file handling (list filenames on console so user knows the names)
      * @param fileName a string that is used to locate the level file
      */
     @Override
     public void loadGame(String fileName) throws FileNotFoundException {
         try {
-            System.out.println("Loading: " + fileName);
-            Scanner reader = new Scanner(new File(fileName));
-            int gameSize = Integer.parseInt(reader.next());
-
+            String fullPath = getFolderLocation() + fileName; // create a string for the full path
+            System.out.println("Loading: " + fullPath); // friendly user message
+            Scanner reader = new Scanner(new File(fullPath));
+            int gameSize = Integer.parseInt(reader.next()); // get the game size from file
+            int lives = Integer.parseInt(reader.next()); // load the lives in case player had less than 3
             // nested for loop will iterate through each cell in the 2d array
             for (int i = 0; i < gameSize; i++) {
                 for (int j = 0; j < gameSize; j++) {
@@ -284,10 +288,11 @@ public class MinesweeperUI implements GameInterface {
                     new Assign(thegame, row, col, guess);
                 }
             }
+            thegame.setLives(lives); // set players lives per the savefile
             System.out.println("Loaded Successfully.");
             reader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Error, file not found." + e.getMessage());
+            System.out.println("Error, file not found: " + e.getMessage());
         }
     } //end loadGame method
 
@@ -318,9 +323,8 @@ public class MinesweeperUI implements GameInterface {
      * Used to return the appropriate save game name. Will be expanded to provide dynamic savenames
      * @return String save game text file name
      */
-    @Override
-    public String getSaveGame() {
+    public String getFolderLocation() {
         //return "Levels/SAVE-" + thegame.getLevel().replace("Levels/", "");
-        return "Levels/SAVEGAME0.txt";
+        return "Levels\\SAVEGAMES\\";
     } //end method
 }//end of class MinewsweeperUI
