@@ -1,76 +1,68 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintStream;
 
-/**
- * The test class UITest.
- *
- * @author  Myran
- * @version 29-5-24
- */
-public class MinesweeperUITest
-{
-    private MinesweeperUI ui;
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    /**
-     * Default constructor for test class UITest
-     */
-    public MinesweeperUITest()
-    {
-    }
+public class MinesweeperUITest {
 
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
+    private MinesweeperUI ui;
+    private ByteArrayOutputStream outContent;
+    private PrintStream originalOut;
+    private InputStream originalIn;
+
     @BeforeEach
-    public void setUp()
-    {
+    public void setUp() {
         ui = new MinesweeperUI();
+        outContent = new ByteArrayOutputStream();
+        originalOut = System.out;
+        originalIn = System.in;
         System.setOut(new PrintStream(outContent));
     }
 
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
-    }
-
-    /*
-    * Test method to test the get choice method
-     */
-    @Test
-    public void testGetChoiceT2()
-    {
-        MinesweeperUI thisMinesweeperUI = new MinesweeperUI();
-        Minesweeper mineswee = new Minesweeper(0);
-        assertEquals("L","L","L");
-    }
-
-    /*
-     * Test method to test the winning announcement method
-     */
     @Test
     public void testWinningAnnouncement() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-        MinesweeperUI ui = new MinesweeperUI();
         ui.winningAnnouncement();
-
-        String expectedOutput = "\nCongratulations, you solved the level";
-        assertEquals(expectedOutput, outputStream.toString().trim());
+        assertEquals("\nCongratulations, you solved the level\n", outContent.toString());
     }
 
-}
+    @Test
+    public void testLivesAnnouncement() {
+        ui.livesAnnouncement();
+        assertEquals("\nYou have ran out of lives, the game is over\n", outContent.toString());
+    }
 
+    @Test
+    public void testGetDifficultyEasy() {
+        String input = "E";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        assertEquals(0, ui.getDifficulty());
+    }
+
+    @Test
+    public void testGetDifficultyHard() {
+        String input = "H";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        assertEquals(1, ui.getDifficulty());
+    }
+
+    @Test
+    public void testMenu() {
+        ui.menu();
+        String expectedMenu = "\n\nPlease select an option: \n"
+                + "[M] Flag a mine\n"
+                + "[G] Guess a square\n"
+                + "[S] Save game\n"
+                + "[L] Load saved game\n"
+                + "[U] Undo move\n"
+                + "[C] Clear game\n"
+                + "[Q] Quit game\n";
+        assertEquals(expectedMenu, outContent.toString());
+    }
+}

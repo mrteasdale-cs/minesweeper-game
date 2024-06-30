@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MinesweeperGUIControl
-comment0.text=\r\n\ This\ is\ the\ class\ for\ the\ GUI\ controls\ (buttons\ and\ adding\ labels\ from\ MinesweeperGUILabels\ Class)\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.2\ Minesweeper\ GUI\ Edition\r\n
+comment0.text=\r\n\ This\ is\ the\ class\ for\ the\ GUI\ controls\ (buttons\ and\ adding\ labels\ from\ MinesweeperGUILabels\ Class)\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.3\ Minesweeper\ GUI\ Edition\r\n
 comment1.params=mainGUI\ guiLabels
 comment1.target=MinesweeperGUIControl(MinesweeperGUI,\ MinesweeperGUILabels)
 comment1.text=\r\n\ This\ contructor\ takes\ in\ several\ paramters\ includuing\ an\ instance\ of\ the\ mainGUi\ as\ well\ as\ the\ labels\ that\ will\r\n\ show\ on\ the\ control\ panel\r\n\ @param\ mainGUI\ the\ mainGUI\ runner\ class\ 'MinesweeperGUI'\r\n\ @param\ guiLabels\ the\ MinesweeperGUILabels\ class\r\n

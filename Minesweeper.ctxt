@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Minesweeper
-comment0.text=\r\n\ This\ is\ the\ class\ and\ it\ handles\ the\ functionality\ of\ the\ main\ game.\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.2\ Minesweeper\ Game\ (GUI\ Edition)\r\n
+comment0.text=\r\n\ This\ is\ the\ class\ and\ it\ handles\ the\ functionality\ of\ the\ main\ game.\ Some\ small\ changes\ as\ I\ wanted\ to\ experiment\ with\ varying\ level\r\n\ difficulties\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.3\ Minesweeper\ Game\ (GUI\ Edition)\r\n
 comment1.params=difficulty
 comment1.target=Minesweeper(int)
 comment1.text=\r\n\ This\ is\ the\ constructor\ for\ the\ class\ minesweeper\r\n

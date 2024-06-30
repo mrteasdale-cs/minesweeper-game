@@ -10,7 +10,6 @@ public interface GameInterface {
     void saveGame(String fileName) throws IOException;
     void loadGame(String fileName) throws FileNotFoundException; //used for Text based game
     int getDifficulty();
-    String getChoice();
     void undoMove();
     void saveMoves(int row, int col);
     String getSaveGame();

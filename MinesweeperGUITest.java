@@ -1,5 +1,3 @@
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,8 +8,8 @@ import java.io.FileNotFoundException;
 /**
  * The test class MinesweeperGUITest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  Myran Teasdale
+ * @version 1.3 GUI Edition 24/6/24
  */
 public class MinesweeperGUITest
 {
@@ -31,7 +29,7 @@ public class MinesweeperGUITest
     @BeforeEach
     public void setUp()
     {
-        gui = new MinesweeperGUI(600, 800);
+        gui = new MinesweeperGUI(600, 500);
     }
 
     /**
@@ -49,11 +47,18 @@ public class MinesweeperGUITest
         // Test if the main frame is created with the correct properties
         JFrame frame = gui.getMainFrame();
         assertNotNull(frame);
-        assertEquals("Minesweeper v1.1", frame.getTitle());
+        assertEquals("Minesweeper v1.3 (Combo Edition)", frame.getTitle());
         assertEquals(800, frame.getWidth());
-        assertEquals(600, frame.getHeight());
+        assertEquals(500, frame.getHeight());
         assertFalse(frame.isResizable());
         assertNotNull(frame.getIconImage());
+    }
+
+    @Test
+    public void testCreateGameBoard() {
+        JPanel gameBoard = gui.createGameBoard();
+        assertNotNull(gameBoard);
+        fail();
     }
 
     @Test
@@ -80,7 +85,6 @@ public class MinesweeperGUITest
             // Handle the exception if the file is not found
         }
         assertEquals(0, gui.getDifficulty());
-        assertEquals("", gui.getChoice());
         gui.saveMoves(0, 0);
         assertEquals("", gui.getSaveGame());
     }

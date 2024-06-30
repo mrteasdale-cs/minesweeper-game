@@ -80,7 +80,7 @@ public class MinesweeperTest {
     public void testReadLevelFileT6() {
         String[][] gameBoard = mineswee1.readLevelFile();
         assertNotNull(gameBoard);
-    }
+    } // end method
 
     /**
      * Tests the getCellState method for an initial cell state.
@@ -93,7 +93,7 @@ public class MinesweeperTest {
         String[][] gameBoard = mineswee1.readLevelFile();
         String result = mineswee1.getCellState(row, col);
         assertEquals("?", result);
-    }
+    } // end method
 
     /**
      * Checks the getCellState method and that the state of a cell is correctly updated after a move.
@@ -106,7 +106,7 @@ public class MinesweeperTest {
         mineswee1.makeMove(Integer.toString(row), Integer.toString(col), "G");
         String result = mineswee1.getCellState(row, col);
         assertEquals("M", result); // check for a mine
-    }
+    } // end method
 
     /**
      * Method to test the setLives method.
@@ -119,7 +119,7 @@ public class MinesweeperTest {
 
         mineswee1.setLives(0);
         assertEquals(0, mineswee1.getLives());
-    }
+    } // end method
 
     /**
      * Method to test the getIndividualMove method. Checks the state of an individual cell is correctly returned.
@@ -131,22 +131,54 @@ public class MinesweeperTest {
         mineswee1.setCellState(row, col, "G");
         String result = mineswee1.getIndividualMove(row, col);
         assertEquals("G", result);
-    }
+    } // end method
 
     /**
      * Tests the checkWin method for a winning condition. Checks game correctly identifies a win.
      */
     @Test
     public void testCheckWin() {
-        // Simulate winning condition
-        for (int i = 0; i < mineswee1.getGameSize(); i++) {
-            for (int j = 0; j < mineswee1.getGameSize(); j++) {
-                mineswee1.setCellState(i, j, mineswee1.getCellState(i, j));
+        int gameSize = mineswee1.getGameSize();
+        String[][] gameBoard = mineswee1.readLevelFile();
+
+        // Simulate a winning condition by revealing all non-mine cells
+        for (int i = 0; i < gameSize; i++) {
+            for (int j = 0; j < gameSize; j++) {
+                if (!gameBoard[i][j].equals("M")) {
+                    // Reveal non-mine cells
+                    mineswee1.makeMove(String.valueOf(i), String.valueOf(j), "G");
+                } else {
+                    // Flag mine cells
+                    mineswee1.makeMove(String.valueOf(i), String.valueOf(j), "M");
+                }
             }
         }
+        // Check if the game is won
         String result = mineswee1.checkWin();
-        assertEquals("won", result);
-    }
+        assertEquals("won", result, "The game should be won when all non-mine cells are revealed and all mines are flagged");
+    } // end method
+
+    /**
+     * Tests the checkWin method for a losing condition. CLoops through and delibrately selects Mines to lose the game.
+     */
+    @Test
+    public void testCheckLose() {
+        int gameSize = mineswee1.getGameSize();
+        String[][] gameBoard = mineswee1.readLevelFile();
+        String result = mineswee1.checkWin();
+        // Simulate a winning condition by revealing all non-mine cells
+        for (int row = 0; row < gameSize; row++) {
+            for (int col = 0; col < gameSize; col++) {
+                if (gameBoard[row][col].equals("M") && result.equals("continue")) {
+                    // Make incorrect guesses to reduce lives to 0
+                    mineswee1.makeMove(String.valueOf(row), String.valueOf(col), "G");
+                    // Check if the game is won
+                    result = mineswee1.checkWin();
+                }
+            }
+        }
+        assertEquals("lives", result, "Game lost when lives gets to 0");
+    } // end method
 
     /**
      * Method to test the getGameSize method. Confirms that the game size is correctly returned.
@@ -156,6 +188,5 @@ public class MinesweeperTest {
         int gameSize = mineswee1.getGameSize();
         assertEquals(5, gameSize); // Assuming the game size is 5 for this test
     }
-    
-    
-}
+
+} //end class

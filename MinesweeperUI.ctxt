@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MinesweeperUI
-comment0.text=\r\n\ This\ class\ provides\ a\ text-based\ user\ interface\ for\ the\ player\ to\ interact\ with\ the\ game\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.2\ (GUI\ Edition)\ 29-5-24\ latest\ update\:\ 18/6/24\r\n
+comment0.text=\r\n\ This\ class\ provides\ a\ text-based\ user\ interface\ for\ the\ player\ to\ interact\ with\ the\ game\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.3\ (GUI\ Edition)\ 29-5-24\ latest\ update\:\ 18/6/24\r\n
 comment1.params=
 comment1.target=MinesweeperUI()
 comment1.text=\r\n\ Constructor\ for\ the\ class\ UI\r\n

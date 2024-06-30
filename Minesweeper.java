@@ -2,7 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 /**
- * This is the class and it handles the functionality of the main game.
+ * This is the class and it handles the functionality of the main game. Some small changes as I wanted to experiment with varying level
+ * difficulties
  * @author Myran Teasdale
  * @version v1.3 Minesweeper Game (GUI Edition)
  */

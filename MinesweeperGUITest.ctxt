@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MinesweeperGUITest
-comment0.text=\r\n\ The\ test\ class\ MinesweeperGUITest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ test\ class\ MinesweeperGUITest.\r\n\r\n\ @author\ \ Myran\ Teasdale\r\n\ @version\ 1.3\ GUI\ Edition\ 24/6/24\r\n
 comment1.params=
 comment1.target=MinesweeperGUITest()
 comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ MinesweeperGUITest\r\n
@@ -13,9 +13,11 @@ comment3.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ eve
 comment4.params=
 comment4.target=void\ testCreateMainFrame()
 comment5.params=
-comment5.target=void\ testGetHeight()
+comment5.target=void\ testCreateGameBoard()
 comment6.params=
-comment6.target=void\ testGetWidth()
+comment6.target=void\ testGetHeight()
 comment7.params=
-comment7.target=void\ testMethods()
-numComments=8
+comment7.target=void\ testGetWidth()
+comment8.params=
+comment8.target=void\ testMethods()
+numComments=9

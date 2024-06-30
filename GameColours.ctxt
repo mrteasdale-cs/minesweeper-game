@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=GameColours
 comment0.text=\r\n\ \ *\ This\ utility\ class\ handles\ all\ the\ colours\ in\ the\ game\ to\ allow\ easy\ changing\ of\ game\ cells,\ display\ panels\r\n\ \ *\ and\ borders.\ Could\ be\ extended\ to\ add\ other\ game\ colours\ such\ as\ adding\ themes\ etc.\r\n\ @author\ M\ Teasdale\r\n\ @version\ 25/6/24\r\n
-comment1.params=
-comment1.target=void\ setDarkColourScheme()
+comment1.params=state
+comment1.target=java.awt.Color\ getCellColour(java.lang.String)
+comment1.text=\r\n\ This\ method\ allows\ the\ game\ to\ grab\ the\ colour\ of\ a\ button\ based\ on\ the\ underlying\ state\ of\ the\r\n\ slot/cell.\ Allows\ easier\ maintenance\ of\ the\ colours\ as\ this\ method\ is\ used\ in\ the\ loadGame\ and\ main\ function\r\n\ of\ the\ buttons\r\n\ @param\ state\ is\ the\ underlying\ state\ of\ a\ cell\ i.e.\ M,\ -,\ 0,\ 1\ etc\r\n\ @return\ new\ Color\ object\r\n
 numComments=2

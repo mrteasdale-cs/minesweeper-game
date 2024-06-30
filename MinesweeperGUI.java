@@ -85,7 +85,8 @@ public class MinesweeperGUI implements GameInterface {
     }
 
     /**
-     * This method returns the game board panel (minesweeper cells)
+     * This method returns the game board panel (minesweeper cells). Set to private so other classes
+     * cannot access
      * @return JPanel - the top panel which is the display (mode and lives) as well as the game status panels
      */
     private JPanel createTopPanel() {
@@ -96,7 +97,8 @@ public class MinesweeperGUI implements GameInterface {
     }
 
     /**
-     * This method returns the game status panel
+     * This method returns the game status panel at the top of the game. Set to private so other classes
+     * cannot access
      * @return JPanel
      */
     private JPanel createGameStatusPanel() {
@@ -109,15 +111,15 @@ public class MinesweeperGUI implements GameInterface {
     }
 
     /**
-     * This method returns the game board panel (minesweeper cells)
+     * This method returns the game board panel (minesweeper cells). Public method so the test class can use.
      * @return JPanel - the game grid panel
      */
-    private JPanel createGameBoard() {
+    public JPanel createGameBoard() {
         guiGameBoard = new MinesweeperGUIBoard(this, mainGame, guiLabels);
         return guiGameBoard.getPanel();
     }
     /**
-     * method to return the main frame
+     * method to return the main frame. Public so other classes can retrieve the main frame
      * @return JFrame frame
      */
     public JFrame getMainFrame() { return frame;}
@@ -172,7 +174,7 @@ public class MinesweeperGUI implements GameInterface {
      * Method to start the game loop within the contructor. allows the restart game function to work
      * as intended byt restarting the while loop that checks for the winning/losing condition.
      */
-    public void gameLoop() {
+    private void gameLoop() {
         gameRunning = true;
         while (gameRunning) {
             String gameStatus = mainGame.checkWin();
@@ -194,7 +196,7 @@ public class MinesweeperGUI implements GameInterface {
     /**
      * Method that handles a graceful game exit when winning or losing
      */
-    public void checkGameEnd() {
+    private void checkGameEnd() {
         int playAgain = JOptionPane.showConfirmDialog(
                 frame, "Play again?",
                 "New Game", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -468,12 +470,5 @@ public class MinesweeperGUI implements GameInterface {
         return "Levels/GUI/SAVEGAME.txt";
     }
 
-    /**
-    * This method is not used in the GUI. returns and empty string.
-    */
-    @Override
-    public String getChoice() {
-        return "";
-    } //UNUSED
 
 } // end MinesweeperGUI class

@@ -60,7 +60,7 @@ public class MinesweeperGUIControl implements ActionListener {
     /**
      * Method to create the main display panel at the top of the game window with all labels
      */
-    public void createDisplayPanel() {
+    private void createDisplayPanel() {
         displayPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         displayPanel.setBackground(GameColours.DISPLAY_PANEL); // constant from GameColours class
         displayPanel.setPreferredSize(new Dimension(mainGUI.getWIDTH(), 60));
@@ -78,7 +78,7 @@ public class MinesweeperGUIControl implements ActionListener {
     /**
      * This method sets up the control panel at the top of the screen
      */
-    public void createControlPanel() {
+    private void createControlPanel() {
         controlPanel = new JPanel(new GridLayout(1, 6));
         controlPanel.setBackground(GameColours.CONTROL_BUTTON_COLOUR);
         controlPanel.setPreferredSize(new Dimension(mainGUI.getWIDTH(), 43));

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Main
-comment0.text=\r\n\ Main\r\n\ This\ class\ handles\ the\ creation\ of\ the\ initial\ game\ object.\ Provides\ basic\ functionality\ to\ choose\r\n\ the\ Text-Based\ UI\ (TUI)\ or\ the\ Graphical\ UI\ (GUI)\ using\ JOPtionpane\ confirm\ dialogs\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.2\ 29-5-24\ (latest\ GUI\ Edition\ update)\r\n
+comment0.text=\r\n\ Main\r\n\ This\ class\ handles\ the\ creation\ of\ the\ initial\ game\ object.\ Provides\ basic\ functionality\ to\ choose\r\n\ the\ Text-Based\ UI\ (TUI)\ or\ the\ Graphical\ UI\ (GUI)\ using\ JOPtionpane\ confirm\ dialogs\r\n\ @author\ Myran\ Teasdale\r\n\ @version\ v1.3\ 29-5-24\ (latest\ GUI\ Edition\ update)\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment1.text=\r\n\ The\ main\ method\ within\ the\ Minesweeper\ Java\ application.\r\n\ It's\ the\ core\ method\ of\ the\ program\ and\ calls\ all\ others.\r\n

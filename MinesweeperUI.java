@@ -21,8 +21,8 @@ public class MinesweeperUI implements GameInterface {
      * Constructor for the class UI
      */
     public MinesweeperUI() {
+        thegame = new Minesweeper(0);
         reader = new Scanner(System.in);
-        thegame = new Minesweeper(getDifficulty());
         menuChoice="";
         moveHistory = new Stack<>(); // create a new stack for move history
 
@@ -30,7 +30,6 @@ public class MinesweeperUI implements GameInterface {
             displayGame();
             menu();
             menuChoice = getChoice();
-
         }
         if (thegame.checkWin().equals("won") ){
             winningAnnouncement(); //check won
@@ -42,19 +41,23 @@ public class MinesweeperUI implements GameInterface {
     /**
      * Method that outputs an announcement when the user has won the game
      */
+    @Override
     public void winningAnnouncement() {
         System.out.println("\nCongratulations, you solved the level");
     }
+
     /**
      * Method that outputs an announcement when the user has lost due to lack of lives
      */
+    @Override
     public void livesAnnouncement() {
         System.out.println("\nYou have ran out of lives, the game is over");
     }
+
     /**
      * Method that displays the game for the user to play
      */
-    public void displayGame() {
+    private void displayGame() {
         //boardmoves = thegame.getMoves();
         System.out.print("\n\nCol    ");
         for (int r = 0; r < thegame.getGameSize(); r++) {
@@ -74,6 +77,7 @@ public class MinesweeperUI implements GameInterface {
      * This method gets the level name
      * @return the level name as string
      */
+    @Override
     public int getDifficulty() {
         System.out.println("Welcome to Minesweeper Text-Based Edition\n(E)ASY or (H)ARD Mode?");
         int difficulty = 0;
