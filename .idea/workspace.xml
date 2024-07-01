@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="RunManager">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="00451517-5b50-40c5-96a6-1b51bd0f1b59" name="Changes" comment="minor changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinesweeperGUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MinesweeperGUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinesweeperUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MinesweeperUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/Images/sweeper-happy-old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/Images/sweeperset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/MinesweeperGUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/MinesweeperGUITest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/MinesweeperUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper - v1.3 GUI Edition/MinesweeperUITest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2icN7WyZMhImpFYS19OYT4N19zG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Minesweeper Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.MinesweeperGUITest.testCreateMainFrame.executor": "Run",
+    "JUnit.MinesweeperUITest.testGetDifficultyHard.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/OneDrive/Work/MSc Computer Science/OOP/Assessment/Minesweeper - v1.3 GUI Edition (Final) MTEASDALE",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.MinesweeperGUITest.testCreateMainFrame">
     <configuration name="Minesweeper Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Minesweeper - v1.3 GUI Edition" />
@@ -8,5 +62,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MinesweeperGUITest.testCreateMainFrame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Minesweeper - v1.3 GUI Edition" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MinesweeperGUITest" />
+      <option name="METHOD_NAME" value="testCreateMainFrame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinesweeperUITest.testGetDifficultyHard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Minesweeper - v1.3 GUI Edition" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MinesweeperUITest" />
+      <option name="METHOD_NAME" value="testGetDifficultyHard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MinesweeperGUITest.testCreateMainFrame" />
+        <item itemvalue="JUnit.MinesweeperUITest.testGetDifficultyHard" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00451517-5b50-40c5-96a6-1b51bd0f1b59" name="Changes" comment="" />
+      <created>1719785738658</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719785738658</updated>
+      <workItem from="1719785739751" duration="610000" />
+      <workItem from="1719851478734" duration="1895000" />
+    </task>
+    <task id="LOCAL-00001" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1719786328515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719786328516</updated>
+    </task>
+    <task id="LOCAL-00002" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1719786346641</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719786346641</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
   </component>
 </project>

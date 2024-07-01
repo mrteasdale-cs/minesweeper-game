@@ -4,10 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import javax.swing.*;
 import java.io.FileNotFoundException;
-
 /**
  * The test class MinesweeperGUITest.
- *
  * @author  Myran Teasdale
  * @version 1.3 GUI Edition 24/6/24
  */
@@ -23,7 +21,6 @@ public class MinesweeperGUITest
 
     /**
      * Sets up the test fixture.
-     *
      * Called before every test case method.
      */
     @BeforeEach
@@ -34,7 +31,6 @@ public class MinesweeperGUITest
 
     /**
      * Tears down the test fixture.
-     *
      * Called after every test case method.
      */
     @AfterEach
